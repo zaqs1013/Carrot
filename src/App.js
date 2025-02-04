@@ -1,15 +1,20 @@
-import { BiCheck } from "react-icons/bi";
-import React, { useState } from "react";
-import TaskStatus from "./TaskStaus";
+import './App.css';
+
+import { useState } from 'react';
+import TaskStaus from './TaskStaus';
+
 function App() {
-const [checked, setChecked] = useState(true); 
-const onComplete = () => checked === true ? setChecked(false) : setChecked(true)
+  const [checked, setChecked] = useState(true);
+  const onComplete = () =>   checked === true ? setChecked(false) : setChecked(true)
+
   return (
-<div className="App">
-<TaskStatus onComplete={onComplete}>
-<div>Learn React {checked ? <BiCheck/>:""}</div>
-</TaskStatus>
-</div>
+    <div className="App">
+
+       <TaskStaus checked={checked} onComplete={onComplete}/>
+       <TaskStaus checked={!checked} onComplete={onComplete}/>
+           
+          
+    </div>
   );
 }
 
