@@ -1,0 +1,19 @@
+.body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  gap: 16px;
+  width: 100%;
+  height: calc(100vh - 130px);
+  background-color: #f3f4f6;
+  overflow: hidden;
+  overflow-y: auto;
+}
+  .body-title {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+  }
+  

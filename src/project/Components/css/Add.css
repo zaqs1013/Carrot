@@ -1,0 +1,118 @@
+.add-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .add-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .add-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .add-input:focus {
+    border-color: #3b82f6;
+    outline: none;
+  }
+  
+  .add-button-group {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .add-button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .add-button.submit {
+    background-color: #3b82f6;
+    color: white;
+    margin-right: 5px;
+  }
+  
+  .add-button.submit:hover {
+    background-color: #2563eb;
+  }
+  
+  .add-button.cancel {
+    background-color: #f87171;
+    color: white;
+    margin-left: 5px;
+  }
+  
+  .add-button.cancel:hover {
+    background-color: #dc2626;
+  }
+  .category-group {
+    margin-bottom: 15px;
+  }
+  
+  .category-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+  }
+  
+  .category-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+  }
+  
+  .category-select:focus {
+    border-color: #3b82f6;
+    outline: none;
+  }
+  
+  .price-group {
+    margin-bottom: 15px;
+  }
+  
+  .price-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.5); /* 기본 반투명 */
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .price-input:focus {
+    border-color: #3b82f6;
+    outline: none;
+    color: black; /* 포커스 시 검은색 */
+  }
+  

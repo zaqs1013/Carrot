@@ -1,0 +1,41 @@
+.tag-nav {
+    display: flex;
+    justify-content: center;
+    gap: 0; /* border를 활용하기 때문에 gap 제거 */
+    background-color: #f3f4f6;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .tag-link {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    padding: 8px 12px;
+    border-radius: 0; /* border가 자연스럽게 이어지도록 둥근 모서리 제거 */
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    transition: background 1s ease, color 0.1s ease;
+  }
+  
+  /* 첫 번째 카테고리는 왼쪽 border 제거 */
+  .tag-link:first-child {
+    border-left: none;
+  }
+  
+  /* 마지막 카테고리는 오른쪽 border 제거 */
+  .tag-link:last-child {
+    border-right: none;
+  }
+  
+  .tag-link:hover {
+    background-color: #ff9900;
+    color: white;
+  }
+  
+  .tag-link.active {
+    background-color: #ffb300;
+    color: white;
+    font-weight: bold;
+  }
+  

@@ -1,0 +1,52 @@
+.item-container {
+    display: flex;
+    flex-direction: row; /* 가로로 정렬 */
+    border: 1px solid #000;
+    border-radius: 8px;
+    padding-right: 16px;
+    width: 400px;
+    background-color: #fff;
+    margin-bottom: 16px;
+  }
+  
+  .item-left {
+    flex: 1; /* 왼쪽 공간 차지 */
+    display: flex;
+    flex-direction: column; /* 세로 정렬 */
+    align-items: center; /* 가로 중앙 정렬 */
+    justify-content: center; /* 세로 중앙 정렬 */
+    border-right: 1px solid #000; /* 오른쪽 구분선 */
+
+  }
+  
+  .item-image {
+    width: 80px; /* 이미지 크기 */
+    height: 80px; /* 이미지 크기 */
+    object-fit: cover; /* 이미지 비율 유지하며 영역 채움 */
+    margin-bottom: 8px; /* 이미지와 이름 간 간격 */
+  }
+  
+  .item-name {
+    font-weight: bold;
+    text-align: center;
+  }
+  
+  .item-details {
+    flex: 2; /* 오른쪽 공간 차지 */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* 요소 간 간격 분배 */
+    padding: 8px;
+  }
+  
+  .item-row {
+    display: flex;
+    justify-content: space-between; /* 텍스트를 양쪽으로 배치 */
+    padding: 4px 0;
+    font-size: 14px;
+  }
+  
+  .item-row span {
+    font-weight: bold;
+  }
+  

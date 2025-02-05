@@ -1,0 +1,11 @@
+.itemCsize {
+    width: 200px;  /* 원하는 크기 */
+    height: 200px; /* 원하는 크기 */
+    object-fit: cover; /* 비율 유지하면서 자르기 */
+    border-radius: 10px; /* 둥글게 (선택 사항) */
+    
+  }
+textarea{
+  width: 200px;
+  height: 100px;
+}

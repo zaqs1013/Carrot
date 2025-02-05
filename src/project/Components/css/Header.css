@@ -1,0 +1,10 @@
+.header {
+    background-color: #ff9100; /* 파란색 배경 */
+    color: white;
+    text-align: center;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  

@@ -1,0 +1,28 @@
+.footer {
+    background-color: #1f2937; 
+    color: white;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .footer-btn {
+    flex: 1; 
+    height: 100%; 
+    background-color: #3b82f6;
+    color: white;
+    font-size: 1rem;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .footer-btn:last-child {
+    background-color: #10b981;
+  }
+  
+  .footer-btn:not(:last-child) {
+    border-right: 1px solid #e5e7eb;
+  }
+  
