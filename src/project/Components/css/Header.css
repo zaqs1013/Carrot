@@ -7,4 +7,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
+  .header-color:hover {
+    color: red; /* 원하는 색상으로 변경 가능 */
+  }

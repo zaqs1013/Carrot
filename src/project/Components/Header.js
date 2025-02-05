@@ -3,9 +3,9 @@ import "./css/Header.css"
 
 const Header = ({setMode}) => {
   return (
-    <div onClick={() => setMode("default")}>
+    <div>
       <header className="header">
-        <h1>TemTemu</h1>
+        <h1 onClick={() => setMode("default")} class="header-color">TemTemu</h1>
       </header>
     </div>
     

@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/itemC.css";
 
-const ItemC = ({ selectedId, topics }) => {
+const ItemC = ({ selectedId, topics, purchase }) => {
   const selectedItem = topics.find(item => item.id === selectedId);
 
   return (
@@ -26,8 +26,8 @@ const ItemC = ({ selectedId, topics }) => {
 
             <div className="note-card">
               <h3>구매 가능 여부</h3>
-              <p>임시</p>
-              <p>{selectedItem.purchase}</p>
+
+              <p>{selectedItem.purchase ? "구매 가능" : "판매 완료"}</p> {/*수정됨*/}
             </div>
           </div>
         </div>

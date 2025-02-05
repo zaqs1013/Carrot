@@ -10,6 +10,11 @@ const MyPost = ({ topics = [], setTopics }) => {
     setTopics((prevTopics) => prevTopics.filter((topic) => topic.id !== id));
   };
 
+  const handleEdit = (id) => {
+    // 수정 로직 추가
+    alert(`상품 ID ${id} 수정`);
+  };
+
   return (
     <div>
       {myItems.length > 0 ? (
@@ -22,11 +27,11 @@ const MyPost = ({ topics = [], setTopics }) => {
             location={topic.location}
             note={topic.note}
             purchaseMode={() => {}}
-            status={topic.status}
             purchase={topic.purchase}
             setMode={() => {}}
             money={topic.money}
             onDelete={() => handleDelete(topic.id)} // 삭제 기능 추가
+            onEdit={() => handleEdit(topic.id)} // 수정 기능 추가
           />
         ))
       ) : (
