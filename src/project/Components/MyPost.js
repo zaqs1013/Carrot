@@ -6,13 +6,16 @@ const MyPost = ({ topics = [], setTopics }) => {
 
   const myItems = topics.filter((topic) => topic.my);
 
-  const handleDelete = (id) => {
-    setTopics((prevTopics) => prevTopics.filter((topic) => topic.id !== id));
+  const handleEdit = (id, updatedData) => {
+    setTopics((prevTopics) =>
+      prevTopics.map((topic) =>
+        topic.id === id ? { ...topic, ...updatedData } : topic
+      )
+    );
   };
 
-  const handleEdit = (id) => {
-    // 수정 로직 추가
-    alert(`상품 ID ${id} 수정`);
+  const handleDelete = (id) => {
+    setTopics((prevTopics) => prevTopics.filter((topic) => topic.id !== id));
   };
 
   return (
@@ -21,17 +24,17 @@ const MyPost = ({ topics = [], setTopics }) => {
         myItems.map((topic) => (
           <ItemComponent
             key={topic.id}
-            My={topic.my}
+            My={topic.my} // 내 상품 여부 전달
             image={topic.image}
             name={topic.name}
             location={topic.location}
             note={topic.note}
-            purchaseMode={() => {}}
-            purchase={topic.purchase}
-            setMode={() => {}}
             money={topic.money}
-            onDelete={() => handleDelete(topic.id)} // 삭제 기능 추가
-            onEdit={() => handleEdit(topic.id)} // 수정 기능 추가
+            purchase={topic.purchase}
+            purchaseMode={() => {}}
+            onDelete={() => handleDelete(topic.id)}
+            onEdit={(updatedData) => handleEdit(topic.id, updatedData)}
+            isMyPostPage={true} // 내 상품 페이지 여부 전달
           />
         ))
       ) : (

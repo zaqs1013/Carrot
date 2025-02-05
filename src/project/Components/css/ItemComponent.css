@@ -122,3 +122,41 @@
     padding: 5px 8px;
   }
 }
+
+.edit-button {
+  background-color: #ffa500;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease-in-out;
+  margin-right: 5px;
+}
+
+.edit-button:hover {
+  background-color: #cc8400;
+}
+
+.save-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.2s ease-in-out;
+  margin-right: 5px;
+}
+
+.save-button:hover {
+  background-color: #218838;
+}
+
+.item-row.purchase-button-container {
+  justify-content: flex-end; /* 구매 가능 버튼만 오른쪽으로 이동 */
+  display: flex;
+  width: 100%; /* 버튼이 오른쪽으로 이동할 수 있도록 전체 너비 사용 */
+}

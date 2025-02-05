@@ -11,8 +11,8 @@ import mo from "./image/mo.jpeg";
 
 const Body = ({ setMode, Mode, selectedCategory }) => {
   const [topics, setTopics] = useState([
-    { my: false,id: 1, name: "레고", location: "서울", note: "조립 완료", purchase: true,  image: legoImage, category: "장난감", money: "2,000원" },
-    { my: true,id: 2, name: "키보드", location: "천안", note: "잔기스", purchase: true,  image: keyboard, category: "PC용품", money: "32,000원" },
+    { my: false,id: 1, name: "레고", location: "서울", note: "조립 완료", purchase: true,  image: legoImage, category: "장난감", money: "1만 2,000원" },
+    { my: true,id: 2, name: "키보드", location: "천안", note: "잔기스", purchase: true,  image: keyboard, category: "PC용품", money: "3만 2,000원" },
     { my: false,id: 3, name: "모닝", location: "인천", note: "나", purchase: false,  image: mo, category: "자동차", money: "3,200만원" },
   ]);
 

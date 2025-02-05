@@ -6,53 +6,44 @@ export default function Add({ addNewItem, setMode }) {
   const [location, setLocation] = useState("");
   const [note, setNote] = useState("");
   const [category, setCategory] = useState("");
-  const [money, setMoney] = useState(""); // 가격 상태 추가
-  const [isFocused, setIsFocused] = useState(false); // 입력 포커스 상태
+  const [rawMoney, setRawMoney] = useState(""); // 원본 값
+  const [money, setMoney] = useState(""); // 포맷된 값
 
-  // 가격 변환 로직
   const formatMoney = (value) => {
     if (!value) return "";
-    
-    let num = parseInt(value.replace(/[^0-9]/g, ""), 10); // 숫자만 추출
+    const num = parseInt(value.replace(/[^0-9]/g, ""), 10); // 숫자만 필터링
     if (isNaN(num) || num === 0) return "₩ 0원";
 
-    if (num >= 100000000) { // 억 단위
-      let eok = Math.floor(num / 100000000);
-      let man = Math.floor((num % 100000000) / 10000);
+    if (num >= 100000000) {
+      const eok = Math.floor(num / 100000000);
+      const man = Math.floor((num % 100000000) / 10000);
       return man === 0 ? `₩ ${eok}억` : `₩ ${eok}억 ${man}만원`;
     }
-    if (num >= 10000000) { // 천만원 단위
-      let man = Math.floor(num / 10000);
-      return `₩ ${man}만원`;
+    if (num >= 10000) {
+      const man = Math.floor(num / 10000);
+      const won = num % 10000;
+      return won === 0 ? `₩ ${man}만원` : `₩ ${man}만 ${won.toLocaleString()}원`;
     }
-    if (num >= 1000000) { // 백만원 단위
-      let man = Math.floor(num / 10000);
-      let cheon = Math.floor((num % 10000) / 1000);
-      return cheon === 0 ? `₩ ${man}만원` : `₩ ${man}만 ${cheon}천원`;
-    }
-    if (num >= 100000) { // 십만원 단위
-      let man = Math.floor(num / 10000);
-      let cheon = Math.floor((num % 10000) / 1000);
-      return cheon === 0 ? `₩ ${man}만원` : `₩ ${man}만 ${cheon}천원`;
-    }
-    if (num >= 10000) { // 만원 단위
-      let man = Math.floor(num / 10000);
-      let cheon = num % 10000;
-      return cheon === 0 ? `₩ ${man}만원` : `₩ ${man}만 ${cheon.toLocaleString()}원`;
-    }
-    return `₩ ${num.toLocaleString()}원`; // 10,000원 미만
+    return `₩ ${num.toLocaleString()}원`;
   };
 
-  // 가격 입력 핸들러
   const handleMoneyChange = (e) => {
-    setMoney(formatMoney(e.target.value));
+    const input = e.target.value.replace(/[^0-9]/g, ""); // 숫자 외 문자 제거
+    setRawMoney(input);
+    setMoney(formatMoney(input));
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (name && location && note && money) {
-      addNewItem({ name, location, note, category, money });
-      setMode("default");
+    if (name && location && note && rawMoney) {
+      addNewItem({
+        name,
+        location,
+        note,
+        category,
+        money: formatMoney(rawMoney),
+      });
+      if (setMode) setMode("default");
     }
   };
 
@@ -100,17 +91,24 @@ export default function Add({ addNewItem, setMode }) {
           <input
             type="text"
             placeholder="₩ 가격"
-            value={money}
+            value={rawMoney}
             onChange={handleMoneyChange}
-            className={`price-input ${isFocused ? "focused" : ""}`}
-            onFocus={() => setIsFocused(true)}
-            onBlur={() => setIsFocused(false)}
+            className="price-input"
+            inputMode="numeric" // 모바일 키패드에서 숫자 전용 키보드 표시
           />
         </div>
 
         <div className="add-button-group">
-          <button type="submit" className="add-button submit">등록</button>
-          <button type="button" onClick={() => setMode("default")} className="add-button cancel">취소</button>
+          <button type="submit" className="add-button submit">
+            등록
+          </button>
+          <button
+            type="button"
+            onClick={() => setMode && setMode("default")}
+            className="add-button cancel"
+          >
+            취소
+          </button>
         </div>
       </form>
     </div>
