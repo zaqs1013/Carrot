@@ -85,7 +85,6 @@
 
 /*  삭제 버튼 스타일 */
 .delete-button {
-  background-color: #ff4d4d;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -93,6 +92,7 @@
   cursor: pointer;
   font-size: 14px;
   transition: background-color 0.2s ease-in-out;
+  margin-right: 5px;
 }
 
 /*  삭제 버튼 호버 효과 */
@@ -124,7 +124,6 @@
 }
 
 .edit-button {
-  background-color: #ffa500;
   color: white;
   border: none;
   padding: 5px 10px;
